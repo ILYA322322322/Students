@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript Objects</title>
+</head>
+<body>
+<script>
+  // Задание 1: Анализ работы объекта
+  let user = {
+    name: "Джон",
+    age: 30
+  };
+
+  user.sayHi = function() {
+    alert("Привет!");
+  };
+
+  user.sayHi(); // Выводит "Привет!"
+
+  // Задание 2: Объект информации о покупателе
+  let customer = {
+    name: "John Doe",
+    age: 35,
+    address: "123 Main Street",
+    email: "johndoe@example.com",
+    phone: "555-123-4567"
+  };
+
+  console.log(customer.name);
+  console.log(customer.address);
+  console.log(customer.phone);
+
+  // Задание 3: Объекты пользователей, заказов и ресторанов
+  let user1 = {
+    name: "John",
+    age: 25,
+    isAdmin: true
+  };
+
+  let user2 = {
+    name: "Jane",
+    age: 30,
+    isAdmin: false
+  };
+
+  let order = {
+    id: 1,
+    amount: 50.99,
+    status: "Delivered"
+  };
+
+  let restaurant = {
+    name: "Example Restaurant",
+    location: "123 Main Street",
+    rating: 4.5
+  };
+
+  if (user1.isAdmin) {
+    console.log("User 1 is an admin");
+  } else {
+    console.log("User 1 is not an admin");
+  }
+
+  console.log("Order ID:", order.id);
+  console.log("Restaurant:", restaurant.name);
+
+  // Задание 4: Функция-конструктор для вывода имени группы
+  function Group(name) {
+    this.name = name;
+  }
+
+  let myGroup = new Group("My Group");
+  alert(myGroup.name); // Выводит "My Group"
+
+  // Задание 5: Конструктор объекта "студент"
+  function Student(name, age, course) {
+    this.name = name;
+    this.age = age;
+    this.course = course;
+    this.displayInfo = function() {
+      console.log("Name:", this.name);
+      console.log("Age:", this.age);
+      console.log("Course:", this.course);
+    };
+  }
+
+  let student1 = new Student("John", 20, "Computer Science");
+  student1.displayInfo();
+
+</script>
+</body>
+</html>

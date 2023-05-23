@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Task 2</title>
+    <!-- Подключение Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-4 mb-4">Task 2</h1>
+    <div class="result">
+        <script>
+            let n = 12;
+            let arr = [];
+            for (let i = 0; i < n; i++) {
+                arr.push(Math.floor(Math.random() * (10 - (-10) + 1)) + (-10)); // генерируем случайное число от -10 до 10
+            }
+
+            let new_arr = arr.map(num => num < 0 ? num ** 2 : num);
+
+            document.write(`<div class="alert alert-secondary mb-3">Old array: ${arr}</div>`);
+            document.write(`<div class="alert alert-primary">New array: ${new_arr}</div>`);
+        </script>
+    </div>
+</div>
+
+<!-- Подключение скриптов Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

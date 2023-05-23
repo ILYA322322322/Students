@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Task 1</title>
+  <!-- Подключение Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1 class="mt-4 mb-4">Task 1</h1>
+  <div class="result">
+    <script>
+      let arr = [];
+      for (let i = 0; i < 15; i++) {
+        arr.push(Math.floor(Math.random() * (30 - (-10) + 1)) + (-10)); // генерируем случайное число от -10 до 30
+      }
+
+      let positive_numbers = arr.filter(num => num > 0);
+      let average = positive_numbers.reduce((acc, cur) => acc + cur, 0) / positive_numbers.length;
+
+      document.write(`<div class="alert alert-secondary mb-3">Array: ${arr}</div>`);
+      document.write(`<div class="alert alert-primary">Average of positive numbers: ${average}</div>`);
+    </script>
+  </div>
+</div>
+
+<!-- Подключение скриптов Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
