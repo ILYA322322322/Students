@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddles Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .result span {
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Riddles Game</h1>
+    <script>
+        var otgadki = 0;
+        alert("Загадка 1. Семь братцев друг за другом идут.\n" +
+            "Один другого никогда не обойдет.\n");
+        var finish1 = 'Дни недели';
+        var answ1 = prompt("Введите ответ: ");
+        if (answ1 == finish1) {
+            alert("Верно :)");
+            otgadki += 1;
+        } else {
+            alert("Неверно :(");
+        }
+        alert("Загадка 2. Раскаленная стрела дуб свалила у села.\n");
+        var finish2 = 'Молния';
+        var answ2 = prompt("Введите ответ: ");
+        if (answ2 == finish2) {
+            alert("Верно :)");
+            otgadki += 1;
+        } else {
+            alert("Неверно :(");
+        }
+        var resultMessage = "Количество отгадок: <span>" + otgadki + "</span>";
+        document.write("<div class='result'>" + resultMessage + "</div>");
+
+        alert("Конец ^^");
+    </script>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

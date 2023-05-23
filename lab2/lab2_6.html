@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Prime Numbers Example</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -16,45 +17,53 @@
       color: #666;
     }
   </style>
-  <script>
-    function calculatePrimes() {
-      let number = parseInt(document.getElementById("number-input").value);
-
-      if (isNaN(number)) {
-        document.getElementById("prime-result").textContent = "Пожалуйста, введите число.";
-        return;
-      }
-
-      function isPrime(num) {
-        if (num <= 1) {
-          return false;
-        }
-
-        for (let i = 2; i <= Math.sqrt(num); i++) {
-          if (num % i === 0) {
-            return false;
-          }
-        }
-
-        return true;
-      }
-
-      let primeNumbers = [];
-
-      for (let i = 2; i <= number; i++) {
-        if (isPrime(i)) {
-          primeNumbers.push(i);
-        }
-      }
-
-      document.getElementById("prime-result").textContent = "Простые числа до " + number + ": " + primeNumbers.join(", ");
-    }
-  </script>
 </head>
 <body>
-<h1>Prime Numbers Example</h1>
-<input type="number" id="number-input" placeholder="Введите число">
-<button onclick="calculatePrimes()">Вычислить простые числа</button>
-<p id="prime-result"></p>
+<div class="container">
+  <h1>Prime Numbers Example</h1>
+  <div class="row">
+    <div class="col">
+      <input type="number" id="number-input" class="form-control" placeholder="Введите число">
+      <button onclick="calculatePrimes()" class="btn btn-primary mt-3">Вычислить простые числа</button>
+      <p id="prime-result" class="mt-3"></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+  function calculatePrimes() {
+    let number = parseInt(document.getElementById("number-input").value);
+
+    if (isNaN(number)) {
+      document.getElementById("prime-result").textContent = "Пожалуйста, введите число.";
+      return;
+    }
+
+    function isPrime(num) {
+      if (num <= 1) {
+        return false;
+      }
+
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    let primeNumbers = [];
+
+    for (let i = 2; i <= number; i++) {
+      if (isPrime(i)) {
+        primeNumbers.push(i);
+      }
+    }
+
+    document.getElementById("prime-result").textContent = "Простые числа до " + number + ": " + primeNumbers.join(", ");
+  }
+</script>
 </body>
 </html>
