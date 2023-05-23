@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Palindrome Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #666;
+    }
+  </style>
+  <script>
+    function checkPalindrome() {
+      let surname = document.getElementById("surname-input").value;
+
+      function isPalindrome(str) {
+        str = str.toLowerCase().replace(/\s/g, "");
+        return str === str.split("").reverse().join("");
+      }
+
+      let resultElement = document.getElementById("palindrome-result");
+
+      if (isPalindrome(surname)) {
+        resultElement.textContent = "Ваша фамилия является палиндромом!";
+      } else {
+        resultElement.textContent = "Ваша фамилия не является палиндромом.";
+      }
+    }
+  </script>
+</head>
+<body>
+<h1>Palindrome Example</h1>
+<input type="text" id="surname-input" placeholder="Введите фамилию">
+<button onclick="checkPalindrome()">Проверить фамилию</button>
+<p id="palindrome-result"></p>
+</body>
+</html>
