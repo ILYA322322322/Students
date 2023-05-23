@@ -40,33 +40,41 @@
 <body>
 <div class="container">
     <h1>Riddles Game</h1>
-    <script>
-        var otgadki = 0;
-        alert("Загадка 1. Семь братцев друг за другом идут.\n" +
-            "Один другого никогда не обойдет.\n");
-        var finish1 = 'Дни недели';
-        var answ1 = prompt("Введите ответ: ");
-        if (answ1 == finish1) {
-            alert("Верно :)");
-            otgadki += 1;
-        } else {
-            alert("Неверно :(");
-        }
-        alert("Загадка 2. Раскаленная стрела дуб свалила у села.\n");
-        var finish2 = 'Молния';
-        var answ2 = prompt("Введите ответ: ");
-        if (answ2 == finish2) {
-            alert("Верно :)");
-            otgadki += 1;
-        } else {
-            alert("Неверно :(");
-        }
-        var resultMessage = "Количество отгадок: <span>" + otgadki + "</span>";
-        document.write("<div class='result'>" + resultMessage + "</div>");
-
-        alert("Конец ^^");
-    </script>
+    <div id="riddles">
+        <h3>Загадка 1:</h3>
+        <p>Семь братцев друг за другом идут.<br>
+            Один другого никогда не обойдет.</p>
+        <input type="text" id="answer1" class="form-control" placeholder="Введите ответ">
+        <br>
+        <h3>Загадка 2:</h3>
+        <p>Раскаленная стрела дуб свалила у села.</p>
+        <input type="text" id="answer2" class="form-control" placeholder="Введите ответ">
+        <br>
+        <button id="checkBtn" class="btn btn-primary">Проверить</button>
+    </div>
+    <div id="result" class="result"></div>
 </div>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script>
+    var otgadki = 0;
+
+    function checkAnswers() {
+        var answer1 = document.getElementById("answer1").value.toLowerCase();
+        var answer2 = document.getElementById("answer2").value.toLowerCase();
+
+        if (answer1 === "дни недели") {
+            otgadki += 1;
+        }
+
+        if (answer2 === "молния") {
+            otgadki += 1;
+        }
+
+        var resultMessage = "Количество отгадок: <span>" + otgadki + "</span>";
+        document.getElementById("result").innerHTML = resultMessage;
+    }
+
+    document.getElementById("checkBtn").addEventListener("click", checkAnswers);
+</script>
 </body>
 </html>
